@@ -1,0 +1,23 @@
+type Query { 
+    todos: [Todo]! 
+}
+type Mutation {
+    addTodo(todo: TodoInput!): Todo
+}
+type Subscription {
+  todoAdded: Todo!
+}
+type User { 
+    _id: ID!, 
+    username: String!
+}
+type Todo {
+    _id: ID!, 
+    title: String!, 
+    body: String!,
+    createdBy: User!
+}
+input TodoInput {
+    title: String!,
+    body: String!
+}
